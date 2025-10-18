@@ -1,7 +1,40 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
+import { User } from '../../user/entities/user.entity';
+import { Tag } from '../../tag/entities/tag.entity';
+import { CommentEntity } from '../../comment/entities/comment.entity';
 
 @ObjectType()
 export class Post {
-  @Field(() => Int, { description: 'Example field (placeholder)' })
-  exampleField: number;
+  @Field(() => Int)
+  id: number;
+
+  @Field()
+  title: string;
+
+  @Field({ nullable: true })
+  slug?: string;
+
+  @Field()
+  thumbnail?: string;
+
+  @Field()
+  content: string;
+
+  @Field()
+  published: boolean;
+
+  @Field()
+  createdAt: Date;
+
+  @Field()
+  updatedAt: Date;
+
+  @Field(() => User)
+  author: User;
+
+  @Field(() => [Tag])
+  tags: Tag[];
+
+  @Field(() => [CommentEntity])
+  comments: CommentEntity[];
 }
