@@ -48,4 +48,17 @@ export class AuthService {
       accessToken,
     };
   }
+
+  async validateJwtUser(userId: number) {
+    const user = await this.prisma.user.findUnique({
+      where: {
+        id: userId,
+      },
+    });
+
+    if (!user) throw new UnauthorizedException('Invalid or expired token!');
+
+    const currentUser = { id: user.id };
+    return currentUser;
+  }
 }
