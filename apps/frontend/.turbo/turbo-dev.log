@@ -1,0 +1,110 @@
+
+> frontend@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.5.5 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.28.1:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.2s
+ ○ Compiling /_not-found/page ...
+ ✓ Compiled /_not-found/page in 4.4s
+ ✓ Compiled / in 375ms
+ GET / 200 in 613ms
+ ✓ Compiled /favicon.ico in 300ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 688ms
+ ✓ Compiled in 123ms
+ ✓ Compiled / in 95ms
+ GET / 200 in 319ms
+ ✓ Compiled in 86ms
+ ✓ Compiled / in 78ms
+ GET / 200 in 277ms
+ ✓ Compiled in 116ms
+ ✓ Compiled / in 90ms
+ GET / 200 in 260ms
+ ✓ Compiled in 88ms
+ ✓ Compiled / in 91ms
+ GET / 200 in 239ms
+ ✓ Compiled in 76ms
+ ✓ Compiled / in 79ms
+ GET / 200 in 243ms
+ ✓ Compiled in 101ms
+ ✓ Compiled / in 69ms
+ GET / 200 in 254ms
+ ✓ Compiled in 107ms
+ ✓ Compiled / in 80ms
+ GET / 200 in 231ms
+ ✓ Compiled in 64ms
+ ✓ Compiled / in 79ms
+ GET / 200 in 252ms
+ ✓ Compiled in 76ms
+ ✓ Compiled / in 90ms
+ GET / 200 in 279ms
+ ✓ Compiled in 82ms
+ ✓ Compiled / in 108ms
+ GET / 200 in 254ms
+ ✓ Compiled in 87ms
+ ✓ Compiled / in 83ms
+ GET / 200 in 244ms
+ ✓ Compiled in 114ms
+ ✓ Compiled / in 86ms
+ GET / 200 in 238ms
+ ✓ Compiled in 84ms
+ ✓ Compiled / in 82ms
+ GET / 200 in 244ms
+ ✓ Compiled in 71ms
+ ✓ Compiled / in 77ms
+ GET / 200 in 224ms
+ ✓ Compiled in 114ms
+ ✓ Compiled / in 88ms
+ GET / 200 in 255ms
+ ✓ Compiled in 120ms
+ ✓ Compiled / in 79ms
+ GET / 200 in 226ms
+ ✓ Compiled in 112ms
+ ✓ Compiled / in 73ms
+ GET / 200 in 241ms
+ ✓ Compiled in 83ms
+ ✓ Compiled / in 85ms
+ GET / 200 in 236ms
+ GET /hero.png 404 in 222ms
+ ✓ Compiled in 99ms
+ ✓ Compiled / in 89ms
+ GET / 200 in 245ms
+ ✓ Compiled in 177ms
+ ✓ Compiled / in 73ms
+ GET / 200 in 261ms
+ ✓ Compiled in 79ms
+ ✓ Compiled / in 75ms
+ GET / 200 in 233ms
+ ✓ Compiled in 125ms
+ ✓ Compiled / in 102ms
+ GET / 200 in 301ms
+ ✓ Compiled in 90ms
+ ✓ Compiled / in 88ms
+ GET / 200 in 253ms
+ ✓ Compiled in 97ms
+ ✓ Compiled / in 83ms
+ GET / 200 in 292ms
+ ✓ Compiled in 86ms
+ ✓ Compiled / in 78ms
+ GET / 200 in 255ms
+ ✓ Compiled in 97ms
+ ✓ Compiled / in 80ms
+ GET / 200 in 239ms
+ ✓ Compiled in 206ms
+ ✓ Compiled / in 67ms
+ GET / 200 in 263ms
+ ✓ Compiled in 79ms
+ ✓ Compiled / in 75ms
+ GET / 200 in 224ms
+ ✓ Compiled in 90ms
+ ✓ Compiled / in 78ms
+ GET / 200 in 228ms
+ ✓ Compiled in 70ms
+ ✓ Compiled / in 77ms
+ GET / 200 in 255ms
+ ✓ Compiled in 110ms
+ ✓ Compiled / in 82ms
+ GET / 200 in 231ms
