@@ -1,6 +1,7 @@
 import { ExecutionContext, Injectable } from '@nestjs/common';
 import { GqlExecutionContext } from '@nestjs/graphql';
 import { AuthGuard } from '@nestjs/passport';
+import { GraphQLContext } from 'src/auth/types/context.interface';
 
 @Injectable()
 export class JwtAuthGuard extends AuthGuard('jwt') {
@@ -8,7 +9,7 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
   //the default auth guard expects http-based requests like rest APIs
   getRequest(context: ExecutionContext) {
     const ctx = GqlExecutionContext.create(context);
-    const request = ctx.getContext<{ req: Request }>().req;
+    const request = ctx.getContext<GraphQLContext>().req;
     return request;
   }
 }

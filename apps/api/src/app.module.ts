@@ -12,12 +12,25 @@ import { TagModule } from './tag/tag.module';
 import { LikeModule } from './like/like.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
+import { GraphQLContext } from './auth/types/context.interface';
+import { Request, Response } from 'express';
 
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/graphql/schema.gql'),
+      //This tells NestJS and TypeScript that the context o each request is based on GraphQLContext interface
+      context: ({
+        req,
+        res,
+      }: {
+        req: Request;
+        res: Response;
+      }): GraphQLContext => ({
+        req,
+        res,
+      }),
     }),
     ConfigModule.forRoot({
       isGlobal: true,
