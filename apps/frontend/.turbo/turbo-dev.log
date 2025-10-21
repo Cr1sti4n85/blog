@@ -7,59 +7,11 @@
    - Network:      http://192.168.28.1:3000
 
  ✓ Starting...
- ✓ Ready in 2.3s
+ ✓ Ready in 2s
  ○ Compiling / ...
- ✓ Compiled / in 4.6s
- GET / 200 in 5497ms
- ✓ Compiled in 132ms
- ✓ Compiled in 96ms
- ✓ Compiled / in 100ms
- GET / 200 in 300ms
- ✓ Compiled in 92ms
- ✓ Compiled / in 87ms
- GET / 200 in 251ms
- ✓ Compiled in 88ms
- ✓ Compiled in 118ms
- ✓ Compiled in 222ms
- ✓ Compiled / in 121ms
- GET / 200 in 386ms
- ✓ Compiled in 83ms
- ✓ Compiled in 79ms
- ✓ Compiled in 271ms
- ✓ Compiled / in 148ms
- GET / 200 in 716ms
- GET / 200 in 696ms
- ✓ Compiled /favicon.ico in 289ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 681ms
- ✓ Compiled in 83ms
- ✓ Compiled in 112ms
- ✓ Compiled in 114ms
- ✓ Compiled in 72ms
+ ✓ Compiled / in 4.4s
+ GET / 200 in 5351ms
+ ✓ Compiled /favicon.ico in 325ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 709ms
+ ✓ Compiled in 188ms
  ✓ Compiled in 167ms
- ✓ Compiled in 96ms
- GET / 200 in 582ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 384ms
- ✓ Compiled in 88ms
- ✓ Compiled / in 97ms
- GET / 200 in 292ms
- ✓ Compiled in 77ms
- ✓ Compiled / in 91ms
- GET / 200 in 262ms
- ✓ Compiled in 74ms
- ✓ Compiled / in 76ms
- GET / 200 in 278ms
- ✓ Compiled in 195ms
- ✓ Compiled / in 87ms
- GET / 200 in 248ms
- ✓ Compiled in 85ms
- ✓ Compiled / in 78ms
- GET / 200 in 260ms
- ✓ Compiled in 93ms
- ✓ Compiled / in 85ms
- GET / 200 in 247ms
- ✓ Compiled in 107ms
- ✓ Compiled / in 83ms
- GET / 200 in 258ms
- ✓ Compiled in 93ms
- ✓ Compiled / in 95ms
- GET / 200 in 290ms
