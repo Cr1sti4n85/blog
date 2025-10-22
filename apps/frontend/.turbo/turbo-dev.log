@@ -7,58 +7,16 @@
    - Network:      http://192.168.28.1:3000
 
  ✓ Starting...
- ✓ Ready in 2.7s
+ ✓ Ready in 2.1s
  ○ Compiling / ...
- ✓ Compiled / in 5s
- ⨯ Error: GraphQL error: Cannot query field "postCount" on type "Query". Did you mean "postCounts"?, Variable "$skip" of type "Int" used in position expecting type "Float"., Variable "$take" of type "Int" used in position expecting type "Float".
-    at fetchGrapQL (src\lib\fetchGrapQL.ts:16:11)
-    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
-    at async Home (src\app\page.tsx:11:33)
-  14 |   const responseBody = await response.json();
-  15 |   if (responseBody.errors) {
-> 16 |     throw new Error(
-     |           ^
-  17 |       `GraphQL error: ${responseBody.errors
-  18 |         .map((err: { message: string }) => err.message)
-  19 |         .join(", ")}` {
-  digest: '4155669358'
-}
- GET / 500 in 6230ms
- ✓ Compiled /favicon.ico in 325ms
- GET /favicon.ico 200 in 727ms
- ✓ Compiled in 137ms
- ✓ Compiled / in 139ms
- ⨯ Error: GraphQL error: Variable "$skip" of type "Int" used in position expecting type "Float"., Variable "$take" of type "Int" used in position expecting type "Float".
-    at fetchGrapQL (src\lib\fetchGrapQL.ts:16:11)
-    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
-    at async Home (src\app\page.tsx:11:33)
-  14 |   const responseBody = await response.json();
-  15 |   if (responseBody.errors) {
-> 16 |     throw new Error(
-     |           ^
-  17 |       `GraphQL error: ${responseBody.errors
-  18 |         .map((err: { message: string }) => err.message)
-  19 |         .join(", ")}` {
-  digest: '2834571694'
-}
- GET / 500 in 568ms
- GET /favicon.ico 200 in 378ms
- ✓ Compiled in 104ms
- ✓ Compiled / in 136ms
- GET / 200 in 860ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 372ms
- GET /?page=2 200 in 502ms
- GET /?page=3 200 in 306ms
- GET /?page=2 200 in 525ms
- ✓ Compiled in 135ms
- ✓ Compiled / in 87ms
- GET /?page=2 200 in 412ms
- ✓ Compiled in 118ms
- ✓ Compiled / in 133ms
- ⨯ Error: GraphQL error: Cannot query field "postCount" on type "Query". Did you mean "postCounts"?
-    at fetchGrapQL (src\lib\fetchGrapQL.ts:16:11)
-    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
-    at async Home (src\app\page.tsx:12:33)
-  14 |   const responseBody = await response.json();
-  15 |   if (responseBody.errors) {
-> 16 |     throw new Error(
+ ✓ Compiled / in 4.8s
+ GET / 200 in 6211ms
+ GET /?page=4 200 in 203ms
+ GET /?page=3 200 in 232ms
+ ✓ Compiled in 111ms
+ ✓ Compiled / in 97ms
+ GET /?page=3 200 in 314ms
+ GET /?page=2 200 in 249ms
+ ✓ Compiled in 113ms
+ ✓ Compiled / in 75ms
+ GET /?page=2 200 in 289ms
