@@ -11,7 +11,9 @@ const Posts = (props: Props) => {
         Últimos posts
       </h2>
       <div className="h-1 mx-auto bg-gradient-to-r from-sky-500 to-indigo-500 w-96 mb-9 rounded-t-md mt-5"></div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">posts</div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {JSON.stringify(props.posts)}
+      </div>
     </section>
   );
 };
