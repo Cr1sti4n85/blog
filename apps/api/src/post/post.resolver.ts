@@ -25,4 +25,9 @@ export class PostResolver {
   count() {
     return this.postService.countPosts();
   }
+
+  @Query(() => Post, { name: 'singlePost' })
+  findPostById(@Args('id', { type: () => Int }) id: number) {
+    return this.postService.getPostById(id);
+  }
 }

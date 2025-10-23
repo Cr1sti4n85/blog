@@ -8,15 +8,30 @@
 
  ✓ Starting...
  ✓ Ready in 2.1s
- ○ Compiling / ...
- ✓ Compiled / in 4.8s
- GET / 200 in 6211ms
- GET /?page=4 200 in 203ms
- GET /?page=3 200 in 232ms
- ✓ Compiled in 111ms
- ✓ Compiled / in 97ms
- GET /?page=3 200 in 314ms
- GET /?page=2 200 in 249ms
- ✓ Compiled in 113ms
- ✓ Compiled / in 75ms
- GET /?page=2 200 in 289ms
+ ○ Compiling /blog/[slug]/[id] ...
+ ✓ Compiled /blog/[slug]/[id] in 4.5s
+ ⨯ TypeError: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$dompurify$2f$dist$2f$purify$2e$es$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__.default.sanitize is not a function
+    at PostPage (src\app\blog\[slug]\[id]\page.tsx:31:54)
+  29 |       </div>
+  30 |       <div
+> 31 |         dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}
+     |                                                      ^
+  32 |       />
+  33 |
+  34 |       {/*POSt COMMents here */} {
+  digest: '643782938'
+}
+ GET /blog/cursim-uberrime-acies/1 500 in 6519ms
+ ✓ Compiled /favicon.ico in 342ms
+ GET /favicon.ico 200 in 772ms
+ ✓ Compiled in 245ms
+ ✓ Compiled /blog/[slug]/[id] in 164ms
+ ⨯ TypeError: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$dompurify$2f$dist$2f$purify$2e$es$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.default.sanitize is not a function
+    at SanitizedContent (src\app\_components\SanitizedContent.tsx:13:31)
+  11 |
+  12 | const SanitizedContent = (props: Props) => {
+> 13 |   const cleanHTML = DOMPurify.sanitize(props.content);
+     |                               ^
+  14 |   return (
+  15 |     <div
+  16 |       className={props.className} {
