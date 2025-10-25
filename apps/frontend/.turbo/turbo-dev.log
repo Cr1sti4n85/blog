@@ -7,15 +7,10 @@
    - Network:      http://192.168.28.1:3000
 
  ✓ Starting...
- ✓ Ready in 2.2s
- ○ Compiling / ...
- ✓ Compiled / in 5s
- GET / 200 in 6652ms
- ✓ Compiled /auth/signin in 481ms
- GET /auth/signin 200 in 721ms
- ✓ Compiled in 258ms
- ✓ Compiled /auth/signin in 100ms
- GET /auth/signin 200 in 326ms
- ✓ Compiled in 160ms
- ✓ Compiled in 171ms
- ✓ Compiled /auth/signin in 106ms
+ ✓ Ready in 2.1s
+ ○ Compiling /auth/signin ...
+ ✓ Compiled /auth/signin in 4.8s
+ GET /auth/signin?email=cperez%40gmail.com&password=metropolis2 200 in 5897ms
+ GET /auth/signin?email=cperez%40gmail.com&password=metropolis2 200 in 296ms
+ ✓ Compiled /favicon.ico in 400ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 824ms
