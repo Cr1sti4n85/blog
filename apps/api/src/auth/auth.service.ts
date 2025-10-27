@@ -5,6 +5,7 @@ import { SignInInput } from './dto/signin.input';
 import { verify } from 'argon2';
 import { JwtService } from '@nestjs/jwt';
 import { AuthJwtPayload } from './types/auth.jwtPayload';
+import { CreateUserInput } from 'src/user/dto/create-user.input';
 
 @Injectable()
 export class AuthService {
@@ -60,5 +61,27 @@ export class AuthService {
 
     const currentUser = { id: user.id };
     return currentUser;
+  }
+
+  async validateGoogleUser(googleUser: CreateUserInput) {
+    const user = await this.prisma.user.findFirst({
+      where: {
+        email: googleUser.email,
+      },
+    });
+
+    //return user without password
+    if (user) {
+      const { password, ...rest } = user;
+      return rest;
+    }
+
+    const dbUser = await this.prisma.user.create({
+      data: {
+        ...googleUser,
+      },
+    });
+    const { password, ...rest } = dbUser;
+    return rest;
   }
 }
