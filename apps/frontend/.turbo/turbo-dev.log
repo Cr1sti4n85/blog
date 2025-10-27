@@ -8,50 +8,14 @@
    - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 2.5s
+ ✓ Ready in 2.1s
  ○ Compiling / ...
  ✓ Compiled / in 4.9s
- GET / 200 in 6510ms
- ✓ Compiled /api/auth/signout in 388ms
- GET /api/auth/signout 307 in 806ms
- GET / 200 in 250ms
- GET / 200 in 580ms
- ✓ Compiled /favicon.ico in 221ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 563ms
- ○ Compiling /auth/signin ...
- ✓ Compiled /auth/signin in 820ms
- GET /auth/signin 200 in 1074ms
- GET /auth/signin 200 in 170ms
- GET / 200 in 300ms
- POST /auth/signin 303 in 659ms
- GET /api/auth/signout 307 in 373ms
- GET / 200 in 256ms
- GET /api/auth/signout 307 in 357ms
- GET / 200 in 297ms
- GET /api/auth/signout 307 in 356ms
- GET / 200 in 285ms
- GET / 200 in 665ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 409ms
- ✓ Compiled in 164ms
- ✓ Compiled / in 85ms
- GET / 200 in 501ms
- GET / 200 in 222ms
- ✓ Compiled /auth/signin in 66ms
- GET /auth/signin 200 in 195ms
- GET / 200 in 320ms
- POST /auth/signin 303 in 629ms
- GET /api/auth/signout 307 in 359ms
- GET / 200 in 253ms
- ✓ Compiled in 159ms
- ✓ Compiled / in 89ms
- GET / 200 in 522ms
- GET / 200 in 209ms
- ✓ Compiled /auth/signin in 60ms
- GET /auth/signin 200 in 170ms
- GET / 200 in 287ms
- POST /auth/signin 303 in 600ms
- GET /api/auth/signout 307 in 430ms
- GET / 200 in 229ms
-holi
- GET /api/auth/signout 307 in 408ms
- GET / 200 in 228ms
+ GET / 200 in 6407ms
+ ✓ Compiled /favicon.ico in 352ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 774ms
+ ✓ Compiled in 198ms
+ ✓ Compiled / in 98ms
+ GET / 200 in 422ms
+ ✓ Compiled in 158ms
+ ✓ Compiled / in 91ms
