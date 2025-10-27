@@ -60,5 +60,5 @@ export async function getSession() {
 }
 
 export async function destroySession() {
-  (await cookies()).delete("session");
+  await (await cookies()).delete("session");
 }
