@@ -1,26 +1,45 @@
 import { Injectable } from '@nestjs/common';
-import { CreateCommentInput } from './dto/create-comment.input';
-import { UpdateCommentInput } from './dto/update-comment.input';
+
+import { PrismaService } from 'src/prisma/prisma.service';
+import { DEFAULT_PAGE_SIZE } from 'src/constants';
 
 @Injectable()
 export class CommentService {
-  create(createCommentInput: CreateCommentInput) {
-    return 'This action adds a new comment';
+  constructor(private readonly prisma: PrismaService) {}
+  // create(createCommentInput: CreateCommentInput) {
+  //   return 'This action adds a new comment';
+  // }
+
+  // update(id: number, updateCommentInput: UpdateCommentInput) {
+  //   return `This action updates a #${id} comment`;
+  // }
+
+  async findOneByPost({
+    postId,
+    take,
+    skip,
+  }: {
+    postId: number;
+    take?: number;
+    skip?: number;
+  }) {
+    return await this.prisma.comment.findMany({
+      where: { postId },
+
+      orderBy: {
+        createdAt: 'desc',
+      },
+      include: {
+        author: true,
+      },
+      take: take ?? DEFAULT_PAGE_SIZE,
+      skip: skip ?? 0,
+    });
   }
 
-  findAll() {
-    return `This action returns all comment`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} comment`;
-  }
-
-  update(id: number, updateCommentInput: UpdateCommentInput) {
-    return `This action updates a #${id} comment`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} comment`;
+  async count(postId: number) {
+    return await this.prisma.comment.count({
+      where: { postId },
+    });
   }
 }

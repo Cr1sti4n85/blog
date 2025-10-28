@@ -18,7 +18,11 @@ const Profile = ({ user }: Props) => {
     <Popover>
       <PopoverTrigger>
         <Avatar>
-          <AvatarImage src={user.avatar} alt={user.name} />
+          <AvatarImage
+            className="rounded-full w-14 border-2 border-white"
+            src={user.avatar}
+            alt={user.name}
+          />
           <AvatarFallback>
             <UserIcon className="w-8 text-slate-500" />
           </AvatarFallback>
