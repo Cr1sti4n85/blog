@@ -1,7 +1,7 @@
 import { fetchPostsById } from "@/lib/actions/postActions";
 import Image from "next/image";
 import NoImg from "../../../../../public/no-image.png";
-import SanitizedContent from "@/app/_components/SanitizedContent";
+import SanitizedContent from "../../_components/SanitizedContent";
 
 type Props = {
   params: Promise<{
