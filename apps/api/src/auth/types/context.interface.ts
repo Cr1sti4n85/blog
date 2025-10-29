@@ -5,3 +5,7 @@ export interface GraphQLContext {
   res: Response;
   user?: any;
 }
+
+export interface AuthenticatedGraphQLContext extends GraphQLContext {
+  req: Request & { user: { id: number } };
+}
