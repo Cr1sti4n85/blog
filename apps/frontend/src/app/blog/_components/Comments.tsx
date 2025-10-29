@@ -4,6 +4,7 @@ import { DEFAULT_PAGE_SIZE } from "@/lib/constants";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import CommentCard from "./CommentCard";
+import CommentPagination from "./CommentPagination";
 
 type Props = {
   postId: number;
@@ -16,10 +17,13 @@ const Comments = ({ postId }: Props) => {
     queryFn: async () =>
       await getPostComments({
         postId,
-        skip: page * DEFAULT_PAGE_SIZE,
+        skip: (page - 1) * DEFAULT_PAGE_SIZE,
         take: DEFAULT_PAGE_SIZE,
       }),
   });
+
+  const totalPages = Math.floor((data?.count ?? 0) / DEFAULT_PAGE_SIZE);
+
   return (
     <div className="p-2 rounded-md shadow-md">
       <h6 className="text-lg text-slate-700 ">Comentarios</h6>
@@ -28,6 +32,12 @@ const Comments = ({ postId }: Props) => {
           <CommentCard comment={comment} key={comment.id} />
         ))}
       </div>
+      <CommentPagination
+        className="p-2"
+        currentPage={page}
+        setCurrentPage={(p) => setPage(p)}
+        totalPages={totalPages}
+      />
     </div>
   );
 };
