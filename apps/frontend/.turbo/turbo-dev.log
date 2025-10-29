@@ -8,13 +8,14 @@
    - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 2.3s
+ ✓ Ready in 2.2s
  ○ Compiling /blog/[slug]/[id] ...
  ✓ Compiled /blog/[slug]/[id] in 5s
+ ○ Compiling / ...
+ ✓ Compiled / in 966ms
  ⨯ TypeError: fetch failed
     at async fetchGrapQL (src\lib\fetchGrapQL.ts:4:20)
-    at async fetchPostsById (src\lib\actions\postActions.ts:22:16)
-    at async PostPage (src\app\blog\[slug]\[id]\page.tsx:15:16)
+    at async getPostComments (src\lib\actions\commentActions.ts:16:16)
   2 |
   3 | export const fetchGrapQL = async (query: string, variables = {}) => {
 > 4 |   const response = await fetch(`${BACKEND_URL}/graphql`, {
@@ -22,25 +23,20 @@
   5 |     method: "POST", //with fetch api every graphql request must be a post
   6 |     headers: {
   7 |       "Content-Type": "application/json", {
-  digest: '2158190220',
+  digest: '2383461264',
   [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
 }
- GET /blog/cupiditas-cultura-vilicus-tactus-defaeco/4 500 in 6918ms
- ✓ Compiled /favicon.ico in 403ms
- GET /favicon.ico 200 in 794ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 847ms
- ⨯ TypeError: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$dompurify$2f$dist$2f$purify$2e$es$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.default.sanitize is not a function
-    at SanitizedContent (src\app\blog\_components\SanitizedContent.tsx:13:31)
-  11 |
-  12 | const SanitizedContent = (props: Props) => {
-> 13 |   const cleanHTML = DOMPurify.sanitize(props.content);
-     |                               ^
-  14 |   return (
-  15 |     <div
-  16 |       className={props.className} {
-  digest: '1598962279'
+ ⨯ TypeError: fetch failed
+    at async fetchGrapQL (src\lib\fetchGrapQL.ts:4:20)
+    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
+    at async Home (src\app\page.tsx:14:33)
+  2 |
+  3 | export const fetchGrapQL = async (query: string, variables = {}) => {
+> 4 |   const response = await fetch(`${BACKEND_URL}/graphql`, {
+    |                    ^
+  5 |     method: "POST", //with fetch api every graphql request must be a post
+  6 |     headers: {
+  7 |       "Content-Type": "application/json", {
+  digest: '293289197',
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
 }
- GET /blog/cupiditas-cultura-vilicus-tactus-defaeco/4 500 in 498ms
- POST /blog/cupiditas-cultura-vilicus-tactus-defaeco/4 200 in 288ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 393ms
- POST /blog/cupiditas-cultura-vilicus-tactus-defaeco/4 200 in 203ms
