@@ -11,7 +11,7 @@ import type { GraphQLContext } from 'src/auth/types/context.interface';
 export class PostResolver {
   constructor(private readonly postService: PostService) {}
 
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   @Query(() => [Post], { name: 'posts' })
   findAll(
     @Context() context: GraphQLContext,

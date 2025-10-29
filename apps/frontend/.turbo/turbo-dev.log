@@ -1,0 +1,280 @@
+
+> frontend@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.5.5 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.28.1:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 2.4s
+ ○ Compiling / ...
+ ✓ Compiled / in 5.3s
+ ⨯ Error: GraphQL error: Unauthorized
+    at fetchGrapQL (src\lib\fetchGrapQL.ts:16:11)
+    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
+    at async Home (src\app\page.tsx:14:33)
+  14 |   const responseBody = await response.json();
+  15 |   if (responseBody.errors) {
+> 16 |     throw new Error(
+     |           ^
+  17 |       `GraphQL error: ${responseBody.errors
+  18 |         .map((err: { message: string }) => err.message)
+  19 |         .join(", ")}` {
+  digest: '3454475951'
+}
+ GET / 500 in 6591ms
+ ✓ Compiled /favicon.ico in 342ms
+ GET /favicon.ico 200 in 785ms
+ ○ Compiling /auth/signin ...
+ ✓ Compiled /auth/signin in 874ms
+ GET /auth/signin 200 in 1317ms
+ ⨯ Error: GraphQL error: Unauthorized
+    at fetchGrapQL (src\lib\fetchGrapQL.ts:16:11)
+    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
+    at async Home (src\app\page.tsx:14:33)
+  14 |   const responseBody = await response.json();
+  15 |   if (responseBody.errors) {
+> 16 |     throw new Error(
+     |           ^
+  17 |       `GraphQL error: ${responseBody.errors
+  18 |         .map((err: { message: string }) => err.message)
+  19 |         .join(", ")}` {
+  digest: '3454475951'
+}
+ GET / 200 in 256ms
+ POST /auth/signin 303 in 642ms
+ ⨯ TypeError: fetch failed
+    at async fetchGrapQL (src\lib\fetchGrapQL.ts:4:20)
+    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
+    at async Home (src\app\page.tsx:14:33)
+  2 |
+  3 | export const fetchGrapQL = async (query: string, variables = {}) => {
+> 4 |   const response = await fetch(`${BACKEND_URL}/graphql`, {
+    |                    ^
+  5 |     method: "POST", //with fetch api every graphql request must be a post
+  6 |     headers: {
+  7 |       "Content-Type": "application/json", {
+  digest: '858521645',
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ GET / 500 in 378ms
+ GET /favicon.ico 200 in 367ms
+ GET / 200 in 822ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 379ms
+ ⨯ Error: GraphQL error: Unauthorized
+    at fetchGrapQL (src\lib\fetchGrapQL.ts:16:11)
+    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
+    at async Home (src\app\page.tsx:14:33)
+  14 |   const responseBody = await response.json();
+  15 |   if (responseBody.errors) {
+> 16 |     throw new Error(
+     |           ^
+  17 |       `GraphQL error: ${responseBody.errors
+  18 |         .map((err: { message: string }) => err.message)
+  19 |         .join(", ")}` {
+  digest: '3454475951'
+}
+ GET / 500 in 367ms
+ GET /favicon.ico 200 in 341ms
+ ⨯ Error: GraphQL error: Unauthorized
+    at fetchGrapQL (src\lib\fetchGrapQL.ts:16:11)
+    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
+    at async Home (src\app\page.tsx:14:33)
+  14 |   const responseBody = await response.json();
+  15 |   if (responseBody.errors) {
+> 16 |     throw new Error(
+     |           ^
+  17 |       `GraphQL error: ${responseBody.errors
+  18 |         .map((err: { message: string }) => err.message)
+  19 |         .join(", ")}` {
+  digest: '3454475951'
+}
+ GET / 500 in 458ms
+ GET /favicon.ico 200 in 362ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 412ms
+ ✓ Compiled / in 190ms
+ ⨯ Error: GraphQL error: Unauthorized
+    at fetchGrapQL (src\lib\fetchGrapQL.ts:16:11)
+    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
+    at async Home (src\app\page.tsx:14:33)
+  14 |   const responseBody = await response.json();
+  15 |   if (responseBody.errors) {
+> 16 |     throw new Error(
+     |           ^
+  17 |       `GraphQL error: ${responseBody.errors
+  18 |         .map((err: { message: string }) => err.message)
+  19 |         .join(", ")}` {
+  digest: '3454475951'
+}
+ ⨯ Error: GraphQL error: Unauthorized
+    at fetchGrapQL (src\lib\fetchGrapQL.ts:16:11)
+    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
+    at async Home (src\app\page.tsx:14:33)
+  14 |   const responseBody = await response.json();
+  15 |   if (responseBody.errors) {
+> 16 |     throw new Error(
+     |           ^
+  17 |       `GraphQL error: ${responseBody.errors
+  18 |         .map((err: { message: string }) => err.message)
+  19 |         .join(", ")}` {
+  digest: '3454475951'
+}
+ GET / 500 in 1158ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 420ms
+ GET /favicon.ico 200 in 401ms
+ ⨯ Error: GraphQL error: Unauthorized
+    at fetchGrapQL (src\lib\fetchGrapQL.ts:16:11)
+    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
+    at async Home (src\app\page.tsx:14:33)
+  14 |   const responseBody = await response.json();
+  15 |   if (responseBody.errors) {
+> 16 |     throw new Error(
+     |           ^
+  17 |       `GraphQL error: ${responseBody.errors
+  18 |         .map((err: { message: string }) => err.message)
+  19 |         .join(", ")}` {
+  digest: '3454475951'
+}
+ GET / 500 in 318ms
+ GET /favicon.ico 200 in 350ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 342ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled / in 97ms
+ ⨯ Error: GraphQL error: Unauthorized
+    at fetchGrapQL (src\lib\fetchGrapQL.ts:16:11)
+    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
+    at async Home (src\app\page.tsx:14:33)
+  14 |   const responseBody = await response.json();
+  15 |   if (responseBody.errors) {
+> 16 |     throw new Error(
+     |           ^
+  17 |       `GraphQL error: ${responseBody.errors
+  18 |         .map((err: { message: string }) => err.message)
+  19 |         .join(", ")}` {
+  digest: '3454475951'
+}
+ ⨯ Error: GraphQL error: Unauthorized
+    at fetchGrapQL (src\lib\fetchGrapQL.ts:16:11)
+    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
+    at async Home (src\app\page.tsx:14:33)
+  14 |   const responseBody = await response.json();
+  15 |   if (responseBody.errors) {
+> 16 |     throw new Error(
+     |           ^
+  17 |       `GraphQL error: ${responseBody.errors
+  18 |         .map((err: { message: string }) => err.message)
+  19 |         .join(", ")}` {
+  digest: '3454475951'
+}
+ GET / 500 in 1094ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 404ms
+ GET /favicon.ico 200 in 378ms
+ GET / 200 in 790ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 395ms
+ GET / 200 in 474ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 334ms
+ ✓ Compiled /auth/signin in 58ms
+ GET /auth/signin 200 in 177ms
+ ⨯ Error: GraphQL error: Unauthorized
+    at fetchGrapQL (src\lib\fetchGrapQL.ts:16:11)
+    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
+    at async Home (src\app\page.tsx:14:33)
+  14 |   const responseBody = await response.json();
+  15 |   if (responseBody.errors) {
+> 16 |     throw new Error(
+     |           ^
+  17 |       `GraphQL error: ${responseBody.errors
+  18 |         .map((err: { message: string }) => err.message)
+  19 |         .join(", ")}` {
+  digest: '3454475951'
+}
+ GET / 500 in 348ms
+ GET /favicon.ico 200 in 388ms
+ ✓ Compiled in 144ms
+ ✓ Compiled / in 83ms
+[
+  {
+    message: 'Unauthorized',
+    locations: [ [Object] ],
+    path: [ 'posts' ],
+    extensions: {
+      code: 'UNAUTHENTICATED',
+      stacktrace: [Array],
+      originalError: [Object]
+    }
+  }
+]
+ ⨯ Error: GraphQL error: Unauthorized
+    at fetchGrapQL (src\lib\fetchGrapQL.ts:17:11)
+    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
+    at async Home (src\app\page.tsx:14:33)
+  15 |   if (responseBody.errors) {
+  16 |     console.log(responseBody.errors);
+> 17 |     throw new Error(
+     |           ^
+  18 |       `GraphQL error: ${responseBody.errors
+  19 |         .map((err: { message: string }) => err.message)
+  20 |         .join(", ")}` {
+  digest: '4202381216'
+}
+ GET / 500 in 872ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 431ms
+ GET /favicon.ico 200 in 407ms
+ ✓ Compiled in 143ms
+ ✓ Compiled / in 89ms
+asghaghagf
+ ⨯ Error: GraphQL error: Unauthorized
+    at fetchGrapQL (src\lib\fetchGrapQL.ts:17:11)
+    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
+    at async Home (src\app\page.tsx:14:33)
+  15 |   if (responseBody.errors) {
+  16 |     console.log("asghaghagf");
+> 17 |     throw new Error(
+     |           ^
+  18 |       `GraphQL error: ${responseBody.errors
+  19 |         .map((err: { message: string }) => err.message)
+  20 |         .join(", ")}` {
+  digest: '4202381216'
+}
+ GET / 500 in 801ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 444ms
+ GET /favicon.ico 200 in 429ms
+ ✓ Compiled in 125ms
+ ✓ Compiled / in 98ms
+ ⨯ Error: GraphQL error: Unauthorized
+    at fetchGrapQL (src\lib\fetchGrapQL.ts:16:11)
+    at async fetchPosts (src\lib\actions\postActions.ts:16:16)
+    at async Home (src\app\page.tsx:14:33)
+  14 |   const responseBody = await response.json();
+  15 |   if (responseBody.errors) {
+> 16 |     throw new Error(
+     |           ^
+  17 |       `GraphQL error: ${responseBody.errors
+  18 |         .map((err: { message: string }) => err.message)
+  19 |         .join(", ")}` {
+  digest: '3454475951'
+}
+ GET / 500 in 819ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 426ms
+ GET /favicon.ico 200 in 421ms
+ GET / 200 in 545ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 619ms
+ ✓ Compiled in 287ms
+ ○ Compiling /blog/[slug]/[id] ...
+ ✓ Compiled /blog/[slug]/[id] in 604ms
+ GET /blog/cursim-uberrime-acies/1 200 in 1697ms
+ GET /blog/cauda-triumphus-vinculum-occaecati-cursim-coaegresco-accommodo/2 200 in 217ms
+ ✓ Compiled in 288ms
+ ✓ Compiled /blog/[slug]/[id] in 96ms
+ GET /blog/cauda-triumphus-vinculum-occaecati-cursim-coaegresco-accommodo/2 200 in 448ms
+ POST /blog/cauda-triumphus-vinculum-occaecati-cursim-coaegresco-accommodo/2 200 in 182ms
+ ✓ Compiled in 191ms
+ POST /blog/cauda-triumphus-vinculum-occaecati-cursim-coaegresco-accommodo/2 200 in 386ms
+ POST /blog/cauda-triumphus-vinculum-occaecati-cursim-coaegresco-accommodo/2 200 in 220ms
+ POST /blog/cauda-triumphus-vinculum-occaecati-cursim-coaegresco-accommodo/2 200 in 219ms
+ ✓ Compiled in 138ms
+ POST /blog/cauda-triumphus-vinculum-occaecati-cursim-coaegresco-accommodo/2 200 in 383ms

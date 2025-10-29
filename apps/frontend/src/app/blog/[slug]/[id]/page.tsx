@@ -2,6 +2,7 @@ import { fetchPostsById } from "@/lib/actions/postActions";
 import Image from "next/image";
 import NoImg from "../../../../../public/no-image.png";
 import SanitizedContent from "../../_components/SanitizedContent";
+import Comments from "../../_components/Comments";
 
 type Props = {
   params: Promise<{
@@ -30,6 +31,7 @@ const PostPage = async ({ params }: Props) => {
       <SanitizedContent content={post.content} />
 
       {/*POSt COMMents here */}
+      <Comments postId={post.id} />
     </main>
   );
 };
