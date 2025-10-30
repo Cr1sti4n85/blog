@@ -3,6 +3,7 @@ import Image from "next/image";
 import NoImg from "../../../../../public/no-image.png";
 import SanitizedContent from "../../_components/SanitizedContent";
 import Comments from "../../_components/Comments";
+import { getSession } from "@/lib/session";
 
 type Props = {
   params: Promise<{
@@ -13,6 +14,8 @@ type Props = {
 const PostPage = async ({ params }: Props) => {
   const postId = (await params).id;
   const post = await fetchPostsById(Number(postId));
+  const session = await getSession();
+
   return (
     <main className="container mx-auto px-4 py-8 mt-16">
       <h1 className="text-4xl font-bold mb-4 text-slate-700">{post.title}</h1>
@@ -31,7 +34,7 @@ const PostPage = async ({ params }: Props) => {
       <SanitizedContent content={post.content} />
 
       {/*POSt COMMents here */}
-      <Comments postId={post.id} />
+      <Comments postId={post.id} user={session?.user} />
     </main>
   );
 };
