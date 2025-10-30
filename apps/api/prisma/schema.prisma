@@ -3,7 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  // output   = "../generated/prisma"
+  output   = "../generated/prisma"
 }
 
 datasource db {
@@ -17,7 +17,7 @@ model User {
   email String @unique
   bio String?
   avatar String?
-  password String
+  password String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   posts Post[]
@@ -66,5 +66,8 @@ model Like {
   createdAt DateTime @default(now())
   user User @relation(fields: [userId], references: [id])
   post Post @relation(fields: [postId], references: [id])
+
+  @@unique(name: "likeUserPost", fields: [userId, postId])
+
 }
 
