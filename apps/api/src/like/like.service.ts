@@ -48,7 +48,7 @@ export class LikeService {
     });
   }
 
-  async userLikedPost({ postId, userId }: { postId: number; userId: number }) {
+  async userLikePost({ postId, userId }: { postId: number; userId: number }) {
     const like = await this.prisma.like.findFirst({
       where: {
         postId,

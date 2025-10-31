@@ -59,7 +59,7 @@ type Query {
   getPostComments(postId: Int!, take: Int = 12, skip: Int = 0): [CommentEntity!]!
   postCommentCount(postId: Int!): Int!
   postLikesCount(postId: Int!): Int!
-  userLikedPost(postId: Int!): Boolean!
+  userLikePost(postId: Int!): Boolean!
 }
 
 type Mutation {

@@ -37,11 +37,11 @@ export class LikeResolver {
 
   @UseGuards(JwtAuthGuard)
   @Query(() => Boolean)
-  userLikedPost(
+  userLikePost(
     @Context() context: AuthenticatedGraphQLContext,
     @Args('postId', { type: () => Int }) postId: number,
   ) {
     const userId = context.req.user.id;
-    return this.likeService.userLikedPost({ postId, userId });
+    return this.likeService.userLikePost({ postId, userId });
   }
 }

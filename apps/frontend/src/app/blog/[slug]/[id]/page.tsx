@@ -4,6 +4,7 @@ import NoImg from "../../../../../public/no-image.png";
 import SanitizedContent from "../../_components/SanitizedContent";
 import Comments from "../../_components/Comments";
 import { getSession } from "@/lib/session";
+import Like from "../../_components/Like";
 
 type Props = {
   params: Promise<{
@@ -33,6 +34,7 @@ const PostPage = async ({ params }: Props) => {
       </div>
       <SanitizedContent content={post.content} />
 
+      <Like postId={post.id} user={session?.user} />
       {/*POSt COMMents here */}
       <Comments postId={post.id} user={session?.user} />
     </main>
