@@ -37,4 +37,16 @@ export class Post {
 
   @Field(() => [CommentEntity])
   comments: CommentEntity[];
+
+  @Field(() => Count)
+  _count: Count;
+}
+
+@ObjectType()
+export class Count {
+  @Field(() => Int)
+  likes: number;
+
+  @Field(() => Int)
+  comments: number;
 }
