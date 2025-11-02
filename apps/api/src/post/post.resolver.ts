@@ -1,7 +1,9 @@
 import { Resolver, Query, Context, Args, Int } from '@nestjs/graphql';
 import { PostService } from './post.service';
 import { Post } from './entities/post.entity';
-import type { GraphQLContext } from 'src/auth/types/context.interface';
+import type { AuthenticatedGraphQLContext } from 'src/auth/types/context.interface';
+import { UseGuards } from '@nestjs/common';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth/jwt-auth.guard';
 // import { CreatePostInput } from './dto/create-post.input';
 // import { UpdatePostInput } from './dto/update-post.input';
 
@@ -12,7 +14,6 @@ export class PostResolver {
   // @UseGuards(JwtAuthGuard)
   @Query(() => [Post], { name: 'posts' })
   findAll(
-    @Context() context: GraphQLContext,
     @Args('skip', { nullable: true }) skip?: number,
     @Args('take', { nullable: true }) take?: number,
   ) {
@@ -27,5 +28,24 @@ export class PostResolver {
   @Query(() => Post, { name: 'singlePost' })
   findPostById(@Args('id', { type: () => Int }) id: number) {
     return this.postService.getPostById(id);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Query(() => [Post])
+  getUserPosts(
+    @Context() context: AuthenticatedGraphQLContext,
+    @Args('skip', { nullable: true }) skip?: number,
+    @Args('take', { nullable: true }) take?: number,
+  ) {
+    const userId = context.req.user.id;
+    return this.postService.findByUser({ userId, skip, take });
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Query(() => Int)
+  userPostCount(@Context() context: AuthenticatedGraphQLContext) {
+    const userId = context.req.user.id;
+
+    return this.postService.userPostCount(userId);
   }
 }
