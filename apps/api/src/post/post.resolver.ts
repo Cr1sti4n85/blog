@@ -34,8 +34,8 @@ export class PostResolver {
   @Query(() => [Post])
   getUserPosts(
     @Context() context: AuthenticatedGraphQLContext,
-    @Args('skip', { nullable: true }) skip?: number,
-    @Args('take', { nullable: true }) take?: number,
+    @Args('skip', { nullable: true, type: () => Int }) skip?: number,
+    @Args('take', { nullable: true, type: () => Int }) take?: number,
   ) {
     const userId = context.req.user.id;
     return this.postService.findByUser({ userId, skip, take });
