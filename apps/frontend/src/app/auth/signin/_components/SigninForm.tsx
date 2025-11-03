@@ -7,6 +7,7 @@ import React, { useActionState } from "react";
 
 const SigninForm = () => {
   const [state, action] = useActionState(signIn, undefined);
+  console.log({ state });
   return (
     <form action={action} className="flex flex-col gap-2">
       {!!state?.message && (
@@ -24,7 +25,7 @@ const SigninForm = () => {
           placeholder="john@example.com"
         />
       </div>
-      {state?.errors?.email && (
+      {!!state?.errors?.email && (
         <p className="text-red-500 text-sm">{state.errors.email}</p>
       )}
       <div>
@@ -33,7 +34,7 @@ const SigninForm = () => {
         </Label>
         <Input type="password" id="password" name="password" required />
       </div>
-      {state?.errors?.password && (
+      {!!state?.errors?.password && (
         <p className="text-red-500 text-sm">{state.errors.password}</p>
       )}
       <SubmitButton>Iniciar sesión</SubmitButton>

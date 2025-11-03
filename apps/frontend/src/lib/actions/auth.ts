@@ -55,27 +55,35 @@ export async function signIn(
     };
   }
 
-  const data = await fetchGrapQL(print(SIGN_IN_MUTATION), {
-    input: {
-      ...validatedFields.data,
-    },
-  });
+  try {
+    const data = await fetchGrapQL(print(SIGN_IN_MUTATION), {
+      input: {
+        ...validatedFields.data,
+      },
+    });
 
-  if (data.errors)
+    //Create session for user
+    await createSession({
+      user: {
+        id: data.signIn.id,
+        name: data.signIn.name,
+        avatar: data.signIn.avatar,
+      },
+      accessToken: data.signIn.accessToken,
+    });
+    revalidatePath("/");
+    redirect("/");
+  } catch {
     return {
       data: Object.fromEntries(payload.entries()),
-      message: "Ocurrió un error",
+      message: "Inicio de sesión incorrecto",
     };
+  }
 
-  //Create session for user
-  await createSession({
-    user: {
-      id: data.signIn.id,
-      name: data.signIn.name,
-      avatar: data.signIn.avatar,
-    },
-    accessToken: data.signIn.accessToken,
-  });
-  revalidatePath("/");
-  redirect("/");
+  // if (data.errors) {
+  //   return {
+  //     data: Object.fromEntries(payload.entries()),
+  //     message: "Ocurrió un error",
+  //   };
+  // }
 }
