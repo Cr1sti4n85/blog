@@ -1,9 +1,15 @@
 "use server";
 import { print } from "graphql";
 import { authFetchGrapQL, fetchGrapQL } from "../fetchGrapQL";
-import { GET_POST_BY_ID, GET_POSTS, GET_USER_POSTS } from "../gqlQueries";
+import {
+  CREATE_POST_MUTATION,
+  GET_POST_BY_ID,
+  GET_POSTS,
+  GET_USER_POSTS,
+} from "../gqlQueries";
 import { Post } from "../types/model.types";
 import { transformTakeSkip } from "../helpers";
+import { PostFormState } from "../types/formState";
 
 export const fetchPosts = async ({
   page,
@@ -42,3 +48,8 @@ export async function fetchUserPosts({
     totalPosts: data.userPostCount as number,
   };
 }
+
+export async function saveNewPost(
+  state: PostFormState,
+  payload: FormData
+): Promise<PostFormState> {}
