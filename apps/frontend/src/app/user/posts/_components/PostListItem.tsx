@@ -1,6 +1,7 @@
 import { Post } from "@/lib/types/model.types.d";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
+import PostActions from "./PostActions";
 type Props = {
   post: Post;
 };
@@ -30,6 +31,7 @@ const PostListItem = ({ post }: Props) => {
       <div className="flex justify-center items-center">
         {post._count.comments}
       </div>
+      <PostActions postId={post.id} />
     </div>
   );
 };
