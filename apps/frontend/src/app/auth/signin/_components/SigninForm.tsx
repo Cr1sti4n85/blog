@@ -7,7 +7,6 @@ import React, { useActionState } from "react";
 
 const SigninForm = () => {
   const [state, action] = useActionState(signIn, undefined);
-  console.log({ state });
   return (
     <form action={action} className="flex flex-col gap-2">
       {!!state?.message && (

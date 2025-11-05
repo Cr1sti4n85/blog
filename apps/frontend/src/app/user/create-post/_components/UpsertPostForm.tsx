@@ -93,8 +93,8 @@ const UpsertPostForm = ({ state, formAction }: Props) => {
         />
         <Label htmlFor="published">Published Now</Label>
       </div>
-      {!!state?.errors?.isPublished && (
-        <p className="text-red-500 animate-shake">{state.errors.isPublished}</p>
+      {!!state?.errors?.published && (
+        <p className="text-red-500 animate-shake">{state.errors.published}</p>
       )}
 
       <SubmitButton>Save</SubmitButton>

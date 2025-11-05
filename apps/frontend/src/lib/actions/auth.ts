@@ -62,7 +62,6 @@ export async function signIn(
       },
     });
 
-    //Create session for user
     await createSession({
       user: {
         id: data.signIn.id,
@@ -71,8 +70,8 @@ export async function signIn(
       },
       accessToken: data.signIn.accessToken,
     });
+
     revalidatePath("/");
-    redirect("/");
   } catch {
     return {
       data: Object.fromEntries(payload.entries()),
@@ -80,10 +79,6 @@ export async function signIn(
     };
   }
 
-  // if (data.errors) {
-  //   return {
-  //     data: Object.fromEntries(payload.entries()),
-  //     message: "Ocurrió un error",
-  //   };
-  // }
+  //redirect out of the try catch as it throws an exception
+  redirect("/");
 }

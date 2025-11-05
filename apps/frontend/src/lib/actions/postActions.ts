@@ -10,6 +10,8 @@ import {
 import { Post } from "../types/model.types";
 import { transformTakeSkip } from "../helpers";
 import { PostFormState } from "../types/formState";
+import { PostFormSchema } from "../zodSchema/postFormSchema";
+import z from "zod";
 
 export const fetchPosts = async ({
   page,
@@ -52,4 +54,29 @@ export async function fetchUserPosts({
 export async function saveNewPost(
   state: PostFormState,
   payload: FormData
-): Promise<PostFormState> {}
+): Promise<PostFormState> {
+  const validatedFields = PostFormSchema.safeParse(
+    Object.fromEntries(payload.entries())
+  );
+
+  if (!validatedFields.success)
+    return {
+      data: Object.fromEntries(payload.entries()),
+      errors: z.flattenError(validatedFields.error).fieldErrors,
+    };
+  let thumbnailUrl = "";
+  //TODO: upload thumbnail
+
+  const data = await authFetchGrapQL(print(CREATE_POST_MUTATION), {
+    input: {
+      ...validatedFields.data,
+      thumbnail: thumbnailUrl,
+    },
+  });
+
+  if (data) return { message: "Publicación guardada", ok: true };
+  return {
+    message: "Ocurrió un problema",
+    data: Object.fromEntries(payload.entries()),
+  };
+}
