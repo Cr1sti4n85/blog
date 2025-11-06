@@ -1,7 +1,12 @@
-import { Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  ForbiddenException,
+  Injectable,
+} from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { DEFAULT_PAGE_SIZE } from 'src/constants';
 import { CreatePostInput } from './dto/create-post.input';
+import { UpdatePostInput } from './dto/update-post.input';
 
 @Injectable()
 export class PostService {
@@ -102,6 +107,50 @@ export class PostService {
             },
           })),
         },
+      },
+    });
+  }
+
+  async update({
+    userId,
+    updatePostInput,
+  }: {
+    userId: number;
+    updatePostInput: UpdatePostInput;
+  }) {
+    const authorIdMatch = await this.prisma.post.findUnique({
+      where: {
+        id: updatePostInput.postId,
+        authorId: userId,
+      },
+    });
+
+    if (!authorIdMatch) throw new ForbiddenException();
+
+    if (!updatePostInput.tags) throw new BadRequestException();
+
+    return await this.prisma.post.update({
+      where: {
+        id: updatePostInput.postId,
+      },
+      data: {
+        ...updatePostInput,
+        tags: {
+          set: [], //this removes all prevous relationships
+          connectOrCreate: updatePostInput.tags.map((tag) => ({
+            //this sets the relations from scratch
+            where: {
+              name: tag,
+            },
+            create: {
+              name: tag,
+            },
+          })),
+        },
+      },
+      include: {
+        author: true,
+        tags: true,
       },
     });
   }
