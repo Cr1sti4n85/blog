@@ -12,6 +12,7 @@ import { transformTakeSkip } from "../helpers";
 import { PostFormState } from "../types/formState";
 import { PostFormSchema } from "../zodSchema/postFormSchema";
 import z from "zod";
+import { uploadThumbnail } from "../upload";
 
 export const fetchPosts = async ({
   page,
@@ -45,6 +46,8 @@ export async function fetchUserPosts({
     skip,
   });
 
+  console.log({ data });
+
   return {
     posts: data.getUserPosts as Post[],
     totalPosts: data.userPostCount as number,
@@ -55,6 +58,7 @@ export async function saveNewPost(
   state: PostFormState,
   payload: FormData
 ): Promise<PostFormState> {
+  console.log({ payload });
   const validatedFields = PostFormSchema.safeParse(
     Object.fromEntries(payload.entries())
   );
@@ -64,8 +68,12 @@ export async function saveNewPost(
       data: Object.fromEntries(payload.entries()),
       errors: z.flattenError(validatedFields.error).fieldErrors,
     };
+
   let thumbnailUrl = "";
-  //TODO: upload thumbnail
+
+  if (validatedFields.data.thumbnail) {
+    thumbnailUrl = await uploadThumbnail(validatedFields.data.thumbnail);
+  }
 
   const data = await authFetchGrapQL(print(CREATE_POST_MUTATION), {
     input: {

@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         hostname: "picsum.photos",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "naegzqamauyugfprzwku.supabase.co",
+        pathname: "/**",
+      },
     ],
   },
 };

@@ -8,84 +8,52 @@
    - Environments: .env
 
  ✓ Starting...
- ✓ Compiled middleware in 225ms
- ✓ Ready in 1925ms
- ○ Compiling /api/auth/signout ...
- ✓ Compiled /api/auth/signout in 1994ms
- GET /api/auth/signout 307 in 2605ms
- ○ Compiling / ...
- ✓ Compiled / in 3.6s
- ⨯ TypeError: fetch failed
-    at async fetchGrapQL (src\lib\fetchGrapQL.ts:5:20)
-    at async fetchPosts (src\lib\actions\postActions.ts:24:16)
-    at async Home (src\app\page.tsx:14:33)
-  3 |
-  4 | export const fetchGrapQL = async (query: string, variables = {}) => {
-> 5 |   const response = await fetch(`${BACKEND_URL}/graphql`, {
-    |                    ^
-  6 |     method: "POST", //with fetch api every graphql request must be a post
-  7 |     headers: {
-  8 |       "Content-Type": "application/json", {
-  digest: '3793742544',
-  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
-}
- GET / 500 in 4270ms
- ✓ Compiled /favicon.ico in 217ms
- GET /favicon.ico 200 in 671ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 710ms
- ✓ Compiled /_not-found/page in 383ms
- GET /_next/internal/helpers.ts 404 in 568ms
- GET / 200 in 932ms
- GET /_next/internal/helpers.ts 404 in 453ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 643ms
- ○ Compiling /auth/signin ...
- ✓ Compiled /auth/signin in 743ms
- GET /auth/signin 200 in 987ms
-entra al try
-crea sesion
-entra al catch
- POST /auth/signin 200 in 383ms
- ✓ Compiled in 196ms
- ✓ Compiled /auth/signin in 96ms
- GET /auth/signin 200 in 380ms
- ✓ Compiled in 198ms
- ✓ Compiled /auth/signin in 83ms
- GET /auth/signin 200 in 299ms
- ✓ Compiled in 193ms
- ✓ Compiled /auth/signin in 113ms
- GET /auth/signin 200 in 417ms
- ✓ Compiled in 163ms
- ✓ Compiled /auth/signin in 92ms
- GET /auth/signin 200 in 324ms
- ✓ Compiled in 216ms
- ✓ Compiled /auth/signin in 105ms
- GET /auth/signin 200 in 391ms
- GET /auth/signin 200 in 759ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 471ms
- GET /_next/internal/helpers.ts 404 in 349ms
- ⨯ Error: GraphQL error: Invalid Credentials!
-    at fetchGrapQL (src\lib\fetchGrapQL.ts:17:11)
-    at async signIn (src\lib\actions\auth.ts:58:16)
-  15 |   const responseBody = await response.json();
-  16 |   if (responseBody.errors) {
-> 17 |     throw new Error(
-     |           ^
-  18 |       `GraphQL error: ${responseBody.errors
-  19 |         .map((err: { message: string }) => err.message)
-  20 |         .join(", ")}` {
-  digest: '1125465686'
-}
- POST /auth/signin 500 in 846ms
- ⚠ Fast Refresh had to perform a full reload due to a runtime error.
- ✓ Compiled in 320ms
- ✓ Compiled /auth/signin in 159ms
- GET /auth/signin 200 in 1109ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 399ms
- GET /_next/internal/helpers.ts 404 in 408ms
- GET /api/auth/signout 307 in 367ms
- GET / 200 in 608ms
- GET /_next/internal/helpers.ts 404 in 278ms
- GET /auth/signin 200 in 203ms
- POST /auth/signin 200 in 420ms
- GET / 200 in 413ms
- POST /auth/signin 303 in 712ms
+ ✓ Compiled middleware in 303ms
+ ✓ Ready in 3.4s
+ ○ Compiling /user/posts ...
+ ✓ Compiled /user/posts in 5.6s
+{ data: { getUserPosts: [], userPostCount: 1 } }
+ GET /user/posts 200 in 7222ms
+ ✓ Compiled /favicon.ico in 385ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 786ms
+ ✓ Compiled in 101ms
+ ✓ Compiled /user/posts in 62ms
+{ data: { getUserPosts: [ [Object] ], userPostCount: 1 } }
+ GET /user/posts 200 in 268ms
+ ✓ Compiled in 126ms
+ ✓ Compiled /user/posts in 111ms
+{ data: { getUserPosts: [ [Object] ], userPostCount: 1 } }
+ GET /user/posts 200 in 498ms
+{ data: { getUserPosts: [ [Object] ], userPostCount: 1 } }
+ GET /user/posts 200 in 863ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 377ms
+ ✓ Compiled in 168ms
+ ✓ Compiled /user/posts in 91ms
+{ data: { getUserPosts: [], userPostCount: 1 } }
+ GET /user/posts 200 in 373ms
+ ✓ Compiled in 155ms
+ ✓ Compiled /user/posts in 76ms
+{ data: { getUserPosts: [ [Object] ], userPostCount: 1 } }
+ GET /user/posts 200 in 300ms
+{ data: { getUserPosts: [ [Object] ], userPostCount: 1 } }
+ GET /user/posts 200 in 605ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 374ms
+ ✓ Compiled in 126ms
+ ✓ Compiled /user/posts in 135ms
+{ page: 1 }
+{ data: { getUserPosts: [ [Object] ], userPostCount: 1 } }
+ GET /user/posts 200 in 409ms
+ ✓ Compiled in 165ms
+ ✓ Compiled /user/posts in 73ms
+{ data: { getUserPosts: [ [Object] ], userPostCount: 1 } }
+ GET /user/posts 200 in 308ms
+ ✓ Compiled in 149ms
+ ✓ Compiled /user/posts in 72ms
+{ data: { getUserPosts: [], userPostCount: 1 } }
+ GET /user/posts 200 in 292ms
+ ✓ Compiled in 157ms
+ ✓ Compiled /user/posts in 89ms
+{ result: 1 }
+{ data: { getUserPosts: [], userPostCount: 1 } }
+ GET /user/posts 200 in 364ms
+ ✓ Compiled in 150ms
