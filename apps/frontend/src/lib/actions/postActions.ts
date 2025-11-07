@@ -6,11 +6,15 @@ import {
   GET_POST_BY_ID,
   GET_POSTS,
   GET_USER_POSTS,
+  UPDATE_POST_MUTATION,
 } from "../gqlQueries";
 import { Post } from "../types/model.types";
 import { transformTakeSkip } from "../helpers";
 import { PostFormState } from "../types/formState";
-import { PostFormSchema } from "../zodSchema/postFormSchema";
+import {
+  PostFormSchema,
+  UpdatePostFormSchema,
+} from "../zodSchema/postFormSchema";
 import z from "zod";
 import { uploadThumbnail } from "../upload";
 
@@ -46,6 +50,7 @@ export async function fetchUserPosts({
     skip,
   });
 
+  console.log({ take, skip });
   console.log({ data });
 
   return {
@@ -58,7 +63,6 @@ export async function saveNewPost(
   state: PostFormState,
   payload: FormData
 ): Promise<PostFormState> {
-  console.log({ payload });
   const validatedFields = PostFormSchema.safeParse(
     Object.fromEntries(payload.entries())
   );
@@ -83,6 +87,41 @@ export async function saveNewPost(
   });
 
   if (data) return { message: "Publicación guardada", ok: true };
+  return {
+    message: "Ocurrió un problema",
+    data: Object.fromEntries(payload.entries()),
+  };
+}
+
+export async function updatePost(
+  state: PostFormState,
+  payload: FormData
+): Promise<PostFormState> {
+  const validatedFields = UpdatePostFormSchema.safeParse(
+    Object.fromEntries(payload.entries())
+  );
+
+  if (!validatedFields.success)
+    return {
+      data: Object.fromEntries(payload.entries()),
+      errors: z.flattenError(validatedFields.error).fieldErrors,
+    };
+
+  // check if thumbnail has been changed
+  const { thumbnail, ...inputs } = validatedFields.data;
+
+  let thumbnailUrl = "";
+  // Upload Thumbnail to supabase
+  if (thumbnail) thumbnailUrl = await uploadThumbnail(thumbnail);
+
+  const data = await authFetchGrapQL(print(UPDATE_POST_MUTATION), {
+    input: {
+      ...inputs,
+      ...(thumbnailUrl && { thumbnail: thumbnailUrl }),
+    },
+  });
+
+  if (data) return { message: "Post actualizado", ok: true };
   return {
     message: "Ocurrió un problema",
     data: Object.fromEntries(payload.entries()),

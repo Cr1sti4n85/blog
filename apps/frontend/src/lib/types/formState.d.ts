@@ -30,7 +30,7 @@ export type CreateCommentFormState =
 export type PostFormState =
   | {
       data?: {
-        // postId?: number;
+        postId?: number;
         title?: string;
         content?: string;
         thumbnail?: File | null;

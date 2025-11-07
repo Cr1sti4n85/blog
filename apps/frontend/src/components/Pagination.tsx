@@ -23,7 +23,7 @@ const Pagination = ({
     currentPage,
   });
   return (
-    <div className={cn("flex items-center gap-2", className)}>
+    <div className={cn("flex items-center justify-center gap-2", className)}>
       {currentPage !== 1 && (
         <button className={cn("rounded-md bg-slate-200 py-2 px-2")}>
           <Link href={`?page=${currentPage - 1}`}>
