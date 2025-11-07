@@ -129,12 +129,14 @@ export class PostService {
 
     if (!updatePostInput.tags) throw new BadRequestException();
 
+    const { postId, ...dataObj } = updatePostInput;
+
     return await this.prisma.post.update({
       where: {
-        id: updatePostInput.postId,
+        id: postId,
       },
       data: {
-        ...updatePostInput,
+        ...dataObj,
         tags: {
           set: [], //this removes all prevous relationships
           connectOrCreate: updatePostInput.tags.map((tag) => ({
@@ -148,10 +150,10 @@ export class PostService {
           })),
         },
       },
-      include: {
-        author: true,
-        tags: true,
-      },
+      // include: {
+      //   author: true,
+      //   tags: true,
+      // },
     });
   }
 }
