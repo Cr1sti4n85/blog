@@ -3,6 +3,7 @@ import { print } from "graphql";
 import { authFetchGrapQL, fetchGrapQL } from "../fetchGrapQL";
 import {
   CREATE_POST_MUTATION,
+  DELETE_POST_MUTATION,
   GET_POST_BY_ID,
   GET_POSTS,
   GET_USER_POSTS,
@@ -125,4 +126,12 @@ export async function updatePost(
     message: "Ocurrió un problema",
     data: Object.fromEntries(payload.entries()),
   };
+}
+
+export async function deletePost(postId: number) {
+  const data = await authFetchGrapQL(print(DELETE_POST_MUTATION), {
+    postId,
+  });
+
+  return data.deletePost;
 }
