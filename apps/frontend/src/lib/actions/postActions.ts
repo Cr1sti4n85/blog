@@ -50,9 +50,6 @@ export async function fetchUserPosts({
     skip,
   });
 
-  console.log({ take, skip });
-  console.log({ data });
-
   return {
     posts: data.getUserPosts as Post[],
     totalPosts: data.userPostCount as number,
@@ -112,7 +109,9 @@ export async function updatePost(
 
   let thumbnailUrl = "";
   // Upload Thumbnail to supabase
-  if (thumbnail) thumbnailUrl = await uploadThumbnail(thumbnail);
+  if (thumbnail && thumbnail?.size !== 0) {
+    thumbnailUrl = await uploadThumbnail(thumbnail);
+  }
 
   const data = await authFetchGrapQL(print(UPDATE_POST_MUTATION), {
     input: {

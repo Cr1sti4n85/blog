@@ -27,10 +27,10 @@ const UpsertPostForm = ({ state, formAction }: Props) => {
     >
       <input hidden name="postId" defaultValue={state?.data?.postId} />
       <div>
-        <Label htmlFor="title">Title</Label>
+        <Label htmlFor="title">Título</Label>
         <Input
           name="title"
-          placeholder="Enter The Title of Your Post"
+          placeholder="Ingresa el título del post"
           defaultValue={state?.data?.title}
         />
       </div>
@@ -39,10 +39,10 @@ const UpsertPostForm = ({ state, formAction }: Props) => {
       )}
 
       <div>
-        <Label htmlFor="content">Content</Label>
+        <Label htmlFor="content">Contenido</Label>
         <Textarea
           name="content"
-          placeholder="Write Your Post Content Here"
+          placeholder="Escribe el contenido aquí"
           rows={6}
           defaultValue={state?.data?.content}
         />
@@ -66,7 +66,7 @@ const UpsertPostForm = ({ state, formAction }: Props) => {
         )}
         {(!!imageUrl || !!state?.data?.previousThumbnailUrl) && (
           <Image
-            src={(imageUrl || state?.data?.previousThumbnailUrl) ?? ""}
+            src={imageUrl || state?.data?.previousThumbnailUrl || ""}
             alt="post thumbnail"
             width={200}
             height={150}
@@ -74,10 +74,10 @@ const UpsertPostForm = ({ state, formAction }: Props) => {
         )}
       </div>
       <div>
-        <Label htmlFor="tags">Tags (comma-separated)</Label>
+        <Label htmlFor="tags">Etiquetas (palabras separadas por coma)</Label>
         <Input
           name="tags"
-          placeholder="Enter tags (comma-separated)"
+          placeholder="Ingresa las etiquetas (separadas por coma)"
           defaultValue={state?.data?.tags}
         />
       </div>
@@ -91,13 +91,13 @@ const UpsertPostForm = ({ state, formAction }: Props) => {
           name="published"
           defaultChecked={state?.data?.published === "on" ? true : false}
         />
-        <Label htmlFor="published">Published Now</Label>
+        <Label htmlFor="published">Publicar ahora</Label>
       </div>
       {!!state?.errors?.published && (
         <p className="text-red-500 animate-shake">{state.errors.published}</p>
       )}
 
-      <SubmitButton>Save</SubmitButton>
+      <SubmitButton>Guardar</SubmitButton>
     </form>
   );
 };

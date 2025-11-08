@@ -8,10 +8,60 @@
    - Environments: .env
 
  ✓ Starting...
- ✓ Compiled middleware in 256ms
- ✓ Ready in 2.1s
+ ✓ Compiled middleware in 247ms
+ ✓ Ready in 1885ms
+ ○ Compiling / ...
+ ✓ Compiled / in 5.5s
+ GET / 200 in 7183ms
+ ○ Compiling /user/posts ...
+ ✓ Compiled /user/posts in 779ms
+ GET /user/posts 200 in 1138ms
  ○ Compiling /user/posts/[id]/update ...
- ✓ Compiled /user/posts/[id]/update in 4.6s
- GET /user/posts/41/update 200 in 6341ms
- ✓ Compiled /favicon.ico in 373ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 818ms
+ ✓ Compiled /user/posts/[id]/update in 683ms
+ GET /user/posts/41/update 200 in 1824ms
+ ✓ Compiled in 184ms
+ ✓ Compiled in 172ms
+{
+  state: {
+    data: {
+      postId: 41,
+      title: 'probando',
+      content: 'nuevo contenido del post por favor likes',
+      published: 'on',
+      tags: 'html,div,flex',
+      previousThumbnailUrl: 'https://naegzqamauyugfprzwku.supabase.co/storage/v1/object/public/thumbnails/acuarela.jpeg_1762548846735'
+    }
+  }
+}
+ GET /user/posts/41/update 200 in 885ms
+ ✓ Compiled /favicon.ico in 337ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 722ms
+ ○ Compiling /_not-found/page ...
+ ✓ Compiled /_not-found/page in 665ms
+ GET /_next/internal/helpers.ts 404 in 985ms
+ GET /user/posts 200 in 321ms
+ GET /user/posts/41/update 200 in 239ms
+ POST /user/posts/41/update 200 in 1493ms
+ GET /user/posts 200 in 243ms
+ ✓ Compiled in 185ms
+ ✓ Compiled /user/posts in 89ms
+ GET /user/posts 200 in 448ms
+ GET /user/posts 200 in 436ms
+ GET /user/posts 200 in 292ms
+ ✓ Compiled /user/posts/[id]/update in 94ms
+ GET /user/posts/41/update 200 in 430ms
+{
+  thumbnail: File {
+    size: 0,
+    type: 'application/octet-stream',
+    name: 'undefined',
+    lastModified: 1762550810403
+  }
+}
+ POST /user/posts/41/update 200 in 205ms
+ ✓ Compiled in 181ms
+ ✓ Compiled in 169ms
+ ✓ Compiled /user/posts/[id]/update in 82ms
+ GET /user/posts/41/update 200 in 331ms
+ GET /user/posts/41/update 200 in 185ms
+ GET /user/posts/41/update 200 in 191ms

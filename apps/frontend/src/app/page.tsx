@@ -14,7 +14,7 @@ export default async function Home({ searchParams }: Props) {
   const { posts, totalPosts } = await fetchPosts({
     page: page ? +page : undefined,
   });
-  const session = await getSession();
+  // const session = await getSession();
   return (
     <main>
       <Hero />
