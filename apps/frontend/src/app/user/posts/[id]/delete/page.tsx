@@ -21,7 +21,7 @@ const DeletePostPage = async (props: Props) => {
   const params = await props.params;
   const post = await fetchPostsById(+params.id);
 
-  const formAction = async (formData: FormData) => {
+  const formAction = async () => {
     "use server";
     await deletePost(+params.id);
     redirect("/user/posts");
@@ -47,7 +47,7 @@ const DeletePostPage = async (props: Props) => {
       <CardContent>
         <form action={formAction} className="flex justify-end gap-2">
           <Button variant={"secondary"} asChild>
-            <Link href={"/user/posts"}>Cancel</Link>
+            <Link href={"/user/posts"}>Cancelar</Link>
           </Button>
           <SubmitButton variant={"destructive"}>Eliminar</SubmitButton>
         </form>

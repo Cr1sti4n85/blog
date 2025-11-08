@@ -1,0 +1,43 @@
+
+> frontend@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.5.5 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.28.1:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Compiled middleware in 309ms
+ ✓ Ready in 2.6s
+ ○ Compiling / ...
+ ✓ Compiled / in 5.8s
+ GET / 200 in 7492ms
+ ○ Compiling /user/posts ...
+ ✓ Compiled /user/posts in 766ms
+ GET /user/posts 200 in 1064ms
+ ○ Compiling /user/posts/(.)[id]/delete ...
+ ✓ Compiled /user/posts/(.)[id]/delete in 629ms
+ GET /user/posts/4/delete 200 in 1829ms
+ POST /user/posts/4/delete 200 in 811ms
+ GET /user/posts 200 in 1075ms
+ GET /user/posts/15/delete 200 in 210ms
+ POST /user/posts/15/delete 200 in 555ms
+ GET /user/posts 200 in 760ms
+ GET /user/posts/15/delete 200 in 205ms
+ ⨯ Error: GraphQL error: Forbidden
+    at authFetchGrapQL (src\lib\fetchGrapQL.ts:42:11)
+    at async deletePost (src\lib\actions\postActions.ts:132:16)
+  40 |   const responseBody = await response.json();
+  41 |   if (responseBody.errors) {
+> 42 |     throw new Error(
+     |           ^
+  43 |       `GraphQL error: ${responseBody.errors
+  44 |         .map((err: { message: string }) => err.message)
+  45 |         .join(", ")}` {
+  digest: '3375493917'
+}
+ POST /user/posts/15/delete 500 in 889ms
+ ⨯ Error: GraphQL error: Forbidden
+    at authFetchGrapQL (src\lib\fetchGrapQL.ts:42:11)
+    at async deletePost (src\lib\actions\postActions.ts:132:16)
