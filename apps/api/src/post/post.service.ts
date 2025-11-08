@@ -150,10 +150,29 @@ export class PostService {
           })),
         },
       },
-      // include: {
-      //   author: true,
-      //   tags: true,
-      // },
     });
+  }
+
+  async delete({
+    postId,
+    userId,
+  }: {
+    postId: number;
+    userId: number;
+  }): Promise<boolean> {
+    const authorIdMatched = await this.prisma.post.findUnique({
+      where: { id: postId, authorId: userId },
+    });
+
+    if (!authorIdMatched) throw new ForbiddenException();
+
+    const result = await this.prisma.post.delete({
+      where: {
+        id: postId,
+        authorId: userId,
+      },
+    });
+
+    return !!result;
   }
 }
